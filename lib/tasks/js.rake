@@ -165,7 +165,7 @@ namespace :js do
 
   desc "Concatenate js bundles with r.js"
   task :rjs_concat do
-    output = `node #{Rails.root}/node_modules/requirejs/bin/r.js -o #{Rails.root}/config/build.js 2>&1`
+    output = `node --stack-size=16000 #{Rails.root}/node_modules/requirejs/bin/r.js -o #{Rails.root}/config/build.js 2>&1`
     raise "Error running js:rjs_concat: \n#{output}\nABORTING" if $?.exitstatus != 0
   end
 
