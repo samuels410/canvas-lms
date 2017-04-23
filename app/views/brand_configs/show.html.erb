@@ -3,10 +3,10 @@
   css_bundle :theme_preview
 %>
 
-<h1 class="theme-preview__page-header"><%= t('Welcome to the Canvas Theme Editor') %></h1>
+<h1 class="theme-preview__page-header"><%= t("Welcome to the #{@domain_root_account.product_name} Theme Editor") %></h1>
 <p>
   <%= t do %>
-    This sample page includes common UI elements in Canvas to help you build your custom branding. Once you start making changes to the color values and images in the left sidebar, you will see a <b>Preview Your Changes</b> button. Click it to refresh this page and see how your changes look.
+    This sample page includes common UI elements in <%= @domain_root_account.product_name %> to help you build your custom branding. Once you start making changes to the color values and images in the left sidebar, you will see a <b>Preview Your Changes</b> button. Click it to refresh this page and see how your changes look.
     <% end %>
 </p>
 <p>
@@ -19,7 +19,7 @@
 <div class="content-box">
   <div class="grid-row">
     <div class="col-xs-7">
-      <p style="margin-top: 0;">Set Canvas' default text color using the <b>Main Text Color</b> field in Theme Editor. Check this text after you change it to see your edits.</p>
+      <p style="margin-top: 0;">Set <%= @domain_root_account.product_name %>' default text color using the <b>Main Text Color</b> field in Theme Editor. Check this text after you change it to see your edits.</p>
       <div class="ic-Form-group">
         <div class="ic-Form-control">
           <label for="theme-preview-input-1" class="ic-Label"><%= t('Text input') %></label>

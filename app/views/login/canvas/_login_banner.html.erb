@@ -9,7 +9,7 @@
           :class =>  "ic-Login__link ic-Login__register-banner",
           data: reg_link_data(@domain_root_account.parent_auth_type)  do %>
       <div class="ic-Login__banner-title">
-        <%= t('Parent of a Canvas User?') %>
+        <%= t("Parent of a #{@domain_root_account.product_name} User?") %>
       </div>
       <div class="ic-Login__banner-subtitle">
         <%= t('Click Here For an Account') %>
@@ -20,7 +20,7 @@
                 :id => 'register_link',
                 :class => "ic-Login__link ic-Login__register-banner" do %>
       <div class="ic-Login__banner-title">
-        <%= t('Need a Canvas Account?') %>
+        <%= t("Need a #{@domain_root_account.product_name} Account?") %>
       </div>
       <div class="ic-Login__banner-subtitle">
         <%= t("Click Here, It's Free!") %>

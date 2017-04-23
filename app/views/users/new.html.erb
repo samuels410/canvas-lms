@@ -1,7 +1,7 @@
 <%
   js_bundle :registration
   css_bundle :registration
-  content_for :page_title, t('create_a_canvas_account', "Create a Canvas Account")
+  content_for :page_title, t('create_a_canvas_account', "Create a #{@domain_root_account.product_name} Account")
   content_for :head, include_common_stylesheets
 %>
 
@@ -14,7 +14,7 @@
 
 <div id="registration_content">
   <div class="registration-content">
-    <h2 id="registration_video"><a href="http://vimeo.com/35336470" title="Play the Canvas introduction video">Watch a Video</a></h2>
+    <h2 id="registration_video"><a href="http://vimeo.com/35336470" title="Play the <%= @domain_root_account.product_name %> introduction video">Watch a Video</a></h2>
     <div id="registration_options">
       <h2>Sign up now, it's free!</h2>
       <% if (url = @domain_root_account.settings[:fft_registration_url]) %>

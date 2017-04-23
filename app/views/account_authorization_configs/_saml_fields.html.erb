@@ -1,5 +1,5 @@
 <p><%= mt(<<-TEXT, metadata_url: link_to(aac.entity_id, aac.entity_id))
-The Canvas SAML Entity ID is %{metadata_url}, and the Service Provider metadata
+The #{@domain_root_account.product_name} SAML Entity ID is %{metadata_url}, and the Service Provider metadata
 is available at that URL.
 TEXT
 %></p>

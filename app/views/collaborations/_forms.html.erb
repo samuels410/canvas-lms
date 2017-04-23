@@ -63,7 +63,7 @@ HEREDOC
       </div>
       <div id="collaborate_authorize_google_docs" class="collaboration_authorization" style="display: none; margin: 20px;">
         <% if !@user_has_google_drive %>
-          <%= t '#instructions.authorize_google_drive', "Before you can collaborate on documents, you need to authorize Canvas
+          <%= t '#instructions.authorize_google_drive', "Before you can collaborate on documents, you need to authorize #{@domain_root_account.product_name}
             to access your Google Drive account:" %>
           <div class="button-container">
             <a class="btn button-default-action" href="<%= oauth_url(:service => :google_drive, :return_to => (request.url + "#add_collaboration")) %>"><%= t '#buttons.authorize_google_drive', "Authorize Google Drive Access" %></a>
@@ -80,9 +80,9 @@ HEREDOC
 <div id="delete_collaboration_dialog" style="display: none;">
   <%= image_tag "google_docs.png", :alt => '', :style => "float: left;" %>
   <%= t 'messages.delete_google_doc_as_well', "This collaboration is being stored as a Google Doc.  Did you want to delete it just
-  from Canvas, or remove it from Google Docs as well?" %>
+  from #{@domain_root_account.product_name}, or remove it from Google Docs as well?" %>
   <div style="margin-top: 15px;">
-  <button type="button" class="btn delete_button"><%= mt 'buttons.delete_from_canvas', "Just Delete  \nfrom Canvas" %></button>
+  <button type="button" class="btn delete_button"><%= mt 'buttons.delete_from_canvas', "Just Delete  \nfrom #{@domain_root_account.product_name}" %></button>
   <button type="button" class="btn delete_button delete_document_button"><%= mt 'buttons.delete_from_google_docs', "Also Delete From  \nGoogle Docs" %></button>
   </div>
 </div>

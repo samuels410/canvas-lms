@@ -20,8 +20,8 @@
     <% if @tag.url.start_with?('http://') %>
       <div class="alert alert-error" id="insecure_content_msg">
         <p>
-          <%= t('You are trying to launch insecure content from within a secure site (canvas).
-            Some web browsers may prevent this content from loading.') %>
+          <%= t("You are trying to launch insecure content from within a secure site (#{@domain_root_account.product_name}).
+            Some web browsers may prevent this content from loading.") %>
         </p>
       </div>
     <% end %>

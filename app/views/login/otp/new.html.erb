@@ -12,7 +12,7 @@
 
 <div id="modal-box" class="ic-Login-confirmation">
   <header class="ic-Login-confirmation__header">
-    <%= image_tag("login/canvas-logo@2x.png", class:"ic-Login-confirmation__logo", alt:"Canvas by Instructure") %>
+    <%= image_tag("login/canvas-logo@2x.png", class:"ic-Login-confirmation__logo", alt:"#{@domain_root_account.product_name} by Instructure") %>
   </header>
   <div class="ic-Login-confirmation__content">
   <h2 class="ic-Login-confirmation__headline"><%= t 'titles.mfa', "Multi-factor Authentication" %></h2>
@@ -23,7 +23,7 @@
       <% end %>
       <p><%=  mt('details.mfa_enrollment', <<-BODY, :secret_key => session[:pending_otp_secret_key], :iphone_url => 'http://itunes.apple.com/us/app/google-authenticator/id388497605', :android_url => 'https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2')
 Multi-factor authentication increases security by requiring that you have something in your physical possession,
-in addition to knowing your password, in order to log in to Canvas. This can be a device that can generate
+in addition to knowing your password, in order to log in to #{@domain_root_account.product_name}. This can be a device that can generate
 verification codes, or a phone that can receive text messages. The Google Authenticator app for [iPhone](%{iphone_url}) or
 [Android](%{android_url}) can be configured by scanning the QR Code below. Other tokens can be configured by entering the
 secret key **%{secret_key}**.
@@ -61,7 +61,7 @@ secret key **%{secret_key}**.
           <% end %>
         </div>
         <div class="span4" style="text-align: center">
-          <% provisioning_uri = ROTP::TOTP.new(session[:pending_otp_secret_key]).provisioning_uri("Canvas") %>
+          <% provisioning_uri = ROTP::TOTP.new(session[:pending_otp_secret_key]).provisioning_uri("#{@domain_root_account.product_name}") %>
           <% qr_code = Barby::QrCode.new(provisioning_uri) %>
           <img src="data:image/png;base64,<%= Base64.encode64(qr_code.to_png(:xdim => 4)).strip %>">
         </div>

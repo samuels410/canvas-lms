@@ -51,7 +51,7 @@
 <% if @presenter.ips_configured? %>
   <p>
     <%= t(:ip_address_list_description,
-        "If you are using an authentication service that requires the Canvas "\
+        "If you are using an authentication service that requires the #{@domain_root_account.product_name} "\
         "servers to contact your servers directly, such as LDAP, you'll need "\
         "to make sure that your servers can accept connections from these "\
         "IP addresses:") %>
